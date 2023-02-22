@@ -10,8 +10,7 @@ const About = ({ homepage }) => {
 
 export default About
 
-export async function getServerSideProps() {
-  // Run API calls in parallel
+export async function getStaticProps({ params }) {
   const homepageRes = await fetchAPI("/homepage", {
     populate: {
       hero: "*",
@@ -27,3 +26,28 @@ export async function getServerSideProps() {
     },
   }
 }
+
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true
+  }
+}
+
+// export async function getServerSideProps() {
+//   // Run API calls in parallel
+//   const homepageRes = await fetchAPI("/homepage", {
+//     populate: {
+//       hero: "*",
+//       seo: { populate: "*" },
+//     },
+//   })
+
+//   // console.log(homepageRes)
+
+//   return {
+//     props: {
+//       homepage: homepageRes.data,
+//     },
+//   }
+// }
