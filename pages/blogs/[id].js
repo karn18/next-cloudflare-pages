@@ -15,8 +15,6 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["slug"] })
-
   return {
     paths: [ {params: { id: '1' }}],
     fallback: true
