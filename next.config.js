@@ -4,6 +4,9 @@ const nextConfig = {
   // experimental: {
   //   runtime: 'experimental-edge',
   // },
+  images: {
+    unoptimized: true
+  }
 }
 
 module.exports = nextConfig
