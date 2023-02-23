@@ -36,9 +36,9 @@ export function parsePath(pathname, ctx) {
 }
 
 export async function getServerSideProps(ctx) {
-  const { id } = parsePath('/post/:id', ctx);
+  const { id } = parsePath('/blogs/:id', ctx)
   // Run API calls in parallel
-
+  console.log(id)
   // console.log(homepageRes)
 
   return {
